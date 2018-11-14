@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ teacher.name }} - 講師詳細</title>
+</head>
+<body>
+    <h1>{{ teacher.name }} - 講師詳細</h1>
+    {% if teacher.broadcast_set.all %}
+        <h2>担当科目</h2>
+        <ul>
+            {% for broadcast in teacher.broadcast_set.all %}
+                <li>{{ broadcast.name }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

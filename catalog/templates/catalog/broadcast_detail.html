@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>{{ broadcast.name }} - Details information</title>
+</head>
+<body>
+    <h1>{{ broadcast.name }} - Details information</h1>
+    <p>{{ broadcast.description }}</p>
+    {% if broadcast.teachers.all %}
+    <h2>Teacher List</h2>
+    <ul>
+        {% for teacher in broadcast.teachers.all %}
+            <li>
+                {{ teacher.name }}
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% if broadcast.broadcastlesson_set.all %}
+    <h2>授業リスト</h2>
+    <ul>
+        {% for lessoin in broadcast.broadcastlesson_set.all %}
+            <li>
+                {{ lessoin.description }}
+            </li>
+        {% endfor %}
+    </ul>
+    {%  endif %}
+</body>
+</html>
